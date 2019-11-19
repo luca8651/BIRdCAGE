@@ -17,7 +17,7 @@ The function takes 4 mandatory input variables:
 
 1) genA. A single row matrix representing the starting genome, where each integer represent a DNA segment and zeros separate adjacent chromosomes. It has structure [0 chromosome_1 0 chromosome_2 0 ... 0 chromosome_n 0] .   For example, two homologous copies of a chromosome made up of 4 segments are represented as genA=[ 0 1 2 3 4 0 1 2 3 4 0]. A genome containing two non-homologous chromosomes divided into 4 and 3 segments, respectively, can be represented as genA=[ 0 1 2 3 4 0 5 6 7 0] . Non homologous chromosomes are not allowed to share any integer symbol.
 
-2) rearredge. 2 by n matrix of integers, representing the n somatic connections to be added during evolution. Every row takes the form [+/- x, +-y]  , with x<=y, where x (resp. -x) represent the left (resp. right) side of node (i.e. DNA segment) x, and similarly y and -y represent the left and right side of node y, respectively.   Connections will be added according to the order of rows (row 1, then row2, etc).  For example, [3,4;-2,2] represent two connections: one connecting the right side of node 3 to the right side of node 4, the other connecting the left side of node 2 to the right side of the same node.  It is important to notice that the set of integers in genA must include the set of integers in rearredge.  
+2) rearredge. 2 by n matrix of integers, representing the n somatic connections to be added during evolution. Every row takes the form [+/- x, +/-y]  , with x<=y, where x (resp. -x) represent the left (resp. right) side of node (i.e. DNA segment) x, and similarly y and -y represent the left and right side of node y, respectively.   Connections will be added according to the order of rows (row 1, then row2, etc).  For example, [3,4;-2,2] represent two connections: one connecting the right side of node 3 to the right side of node 4, the other connecting the left side of node 2 to the right side of the same node.  It is important to notice that the set of integers in genA must include the set of integers in rearredge.  
 
 3) telsmat.   2 by v matrix of integers, where v is the number of distinct chromosomes in the original genome.  Every row takes the form [x y] , with x<=y, where x and y represent the nodes carrying the telomeres of a particular chromosome.  For example, if we have genA=[ 0 1 2 3 4 0 5 6 7 0], we define telsmat as [1,4;5,7]: one set of telomere nodes [1,4] defining the first chromosome, and another set [5,7] defining the other one.
 
@@ -29,9 +29,9 @@ optional variables:
 "random"  : used to decide whether to randomly sample the space of evolutions
 
 'track'
-'fr_el'
-'scorevet'  : weight for each class of operations
-'random'
+'fr_el' : at the end of the evoltion, decides whether to keep (value of 0) or eliminate (value of 1) rearranged chromosomes carrying somatic telomeres [default=1] 
+'scorevet'  : vector of length 3 assigning a weight for each class of operations
+
 'CD'
 'simple_break'
 'breakop'
