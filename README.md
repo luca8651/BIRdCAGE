@@ -28,15 +28,8 @@ optional variables:
 
 "random"  : used to decide whether to randomly sample the space of evolutions
 
-'track'
 'fr_el' : at the end of the evoltion, decides whether to keep (value of 0) or eliminate (value of 1) rearranged chromosomes carrying somatic telomeres [default=1] 
 'scorevet'  : vector of length 3 assigning a weight for each class of operations
-
-'CD'
-'simple_break'
-'breakop'
-'opvet'
-
 
 
 #######################
@@ -86,18 +79,9 @@ ans =
 
 
 
-###################################
-###this is used to generate RANDOM evolutions:
+#We can also generate RANDOM evolutions:
 [evolgood,same_evol,genevolfilt,mapfiltnew2,CNmat,CNtarget,best_score,ind_best_score,scorefilt,ind_scorefilt,ind_scorefilt_p,statsmat,rearrmat,opmatnew,opindmat,cont,rmat,MFgood]=cn_finder_b91b_all_perms_MF_new_score_10281_2_nfr_comp_33_track(nevents,nsamples,fast,varargin)
 
-
-
-#########################
-
-PD_4243c_simuls.m
-
-
-####################
 
 
 [genevolfinal,usedbpmat,genfinalfilt,genfinalfilt2,evol_mapfinal,evol_mapfilt,evol_mapfilt2,genfinalfiltconn,opmatfinal,ind1,ind2,templvet,opindmat,opvet2,vetfilt3,n_empty,ind22bpmatfinal,CD2,replvet,breakvet2,genevolfinalfr,which_reused,scorevolfinal,scorefinalfilt2]=Gen_evol_BIR10281_noMF_valsmat(genA,rearredge,telsmat,valsmat,varargin)
